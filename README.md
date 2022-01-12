@@ -1,3 +1,3 @@
 # oliorepo
-Object oriented programming with java. \n
+Object oriented programming with java.
 LUT course 2022
