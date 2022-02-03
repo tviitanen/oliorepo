@@ -16,7 +16,7 @@ public class ReadAndWriteIO {
             try (FileWriter fileWriter = new FileWriter(writeFile)) {
                 while ((fileLine = br.readLine()) != null) {
                     int lineLenght = fileLine.length();
-                    if (lineLenght < 30 && !fileLine.trim().isEmpty()) {
+                    if (lineLenght < 30 && !fileLine.trim().isEmpty() && fileLine.contains("v")) {
                         fileWriter.write(fileLine+"\n");
                     }
                     }
