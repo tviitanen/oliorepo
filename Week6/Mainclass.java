@@ -10,6 +10,7 @@ public class Mainclass {
         boolean jatka = true;
         String account = null;
         int amount;
+        Bank bank = new Bank();
         while (jatka){      
             System.out.println("\n*** BANK SYSTEM ***");
             System.out.println("1) Add a regular account");
@@ -25,7 +26,6 @@ public class Mainclass {
             Scanner sc = new Scanner(System.in);
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             int choice = sc.nextInt();
-            Bank bank = new Bank();
             switch(choice) {
             case 1:
                 System.out.print("Give an account number: ");
@@ -77,7 +77,6 @@ public class Mainclass {
                 }
                 System.out.print("Amount of money to withdraw: ");
                 amount = sc.nextInt();
-                System.out.println("Withdrawing from the account: " + account + " the amount " + amount);
                 bank.withdraw(account, amount);
                 break;
             case 5:
