@@ -3,18 +3,18 @@ package week6;
 public abstract class Account {
         String accountNumber;
         int balance;
-        public Account(String acc, int bal) {
+        protected Account(String acc, int bal) {
             accountNumber = acc;
             balance = bal;
             System.out.println("Account created.");
     }
-    public String getAccount(){
+    protected String getAccount(){
         return accountNumber;
     }
-    public int getBalance(){
+    protected int getBalance(){
         return balance;
     }
-    public void setBalance(int diff){
+    protected void setBalance(int diff){
         if (0 <= balance - diff){
             this.balance += diff;
         }
@@ -22,7 +22,7 @@ public abstract class Account {
 }
 
     class debitAccount extends Account {
-        public debitAccount(String acc, int bal){
+        protected debitAccount(String acc, int bal){
         super(acc, bal);
         }
     }
@@ -30,8 +30,17 @@ public abstract class Account {
     class creditAccount extends Account {
         private int creditLimit;
         public creditAccount(String acc, int bal, int credit){
-        super(acc, bal);
-        creditLimit = credit;        
+            super(acc, bal);
+            creditLimit = credit;
+        }
+    protected int getCredit(){
+        return creditLimit;
+    }
+
+    protected void setBalance(int diff){
+        if (-creditLimit <= balance + diff){
+            this.balance += diff;
         }
     }
+}
 

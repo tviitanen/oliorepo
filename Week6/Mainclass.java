@@ -51,7 +51,6 @@ public class Mainclass {
                 amount = sc.nextInt();
                 System.out.print("Give a credit limit: ");
                 int creditLimit = sc.nextInt();
-                System.out.println("Adding to bank: " + account + "," + amount + "," + creditLimit);
                 bank.addCreditAccount(account, amount, creditLimit);
                 break;
             case 3:
@@ -64,7 +63,6 @@ public class Mainclass {
                 }
                 System.out.print("Amount of money to deposit: ");
                 amount = sc.nextInt();
-                System.out.println("Depositing to the account: " + account + " the amount " + amount);
                 bank.deposit(account, amount);
                 break;
             case 4:
