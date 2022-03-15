@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Mainclass {
     public static void main(String[] args) {
-        BottleDispenser bd = new BottleDispenser();
         boolean jatka = true;
         while (jatka){      
             System.out.println("\n*** BOTTLE DISPENSER ***");
@@ -19,20 +18,20 @@ public class Mainclass {
             int choice = sc.nextInt();
             switch(choice) {
             case 1:
-                bd.addMoney();
+                BottleDispenser.getInstance().addMoney();
                 break;
             case 2:
-                bd.printBottles();
+                BottleDispenser.getInstance().printBottles();
                 System.out.print("Your choice: ");
                 Scanner scan = new Scanner(System.in);
                 int purchace = scan.nextInt();
-                bd.buyBottle(purchace);
+                BottleDispenser.getInstance().buyBottle(purchace);
                 break;
             case 3:
-                bd.returnMoney();
+                BottleDispenser.getInstance().returnMoney();
                 break;
             case 4:
-                bd.printBottles();
+                BottleDispenser.getInstance().printBottles();
                 break;
             case 0:
                 jatka = false;
